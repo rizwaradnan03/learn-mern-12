@@ -61,6 +61,7 @@ const deleteData = async (req,res) => {
                 id: id
             }
         })
+        res.status(200).json(data)
     } catch (error) {
         console.log(error)
     }
