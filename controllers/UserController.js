@@ -3,7 +3,7 @@ const db = require('../config/Database')
 
 const getAll = async (req,res) => {
     try {
-        const query_data = await db.query("select users.nama as nama, religion.nama as religion, users.alamat as alamat, users.no_hp as no_hp from users inner join religion on religion.id = users.religion_id")
+        const query_data = await db.query("select users.id as id, users.nama as nama, religion.nama as religion, users.alamat as alamat, users.no_hp as no_hp from users inner join religion on religion.id = users.religion_id")
         const data = query_data[0]
 
         res.status(200).json(data)
